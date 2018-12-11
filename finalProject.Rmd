@@ -1,0 +1,120 @@
+---
+title: "FinalProject"
+author: "Sherry Feng"
+date: "December 11, 2018"
+output: html_document
+---
+
+Analyzing the first trial of data
+Expert: Leona, Jingyi, Liz
+Novice: everyone else
+
+```{r}
+
+
+jingyi_e =read.csv("jingyi_expert.csv")
+jingyi_e = jingyi_e[-c(0:30), ]
+
+jay = read.csv("jay.csv")
+jay = jay[-c(0:30), ]
+
+liz_e = read.csv("Liz_expert.csv")
+liz_e = liz_e[-c(0:31), ]
+
+leona_e = read.csv("leona_expert.csv")
+leona_e = leona_e[-c(0:30), ]
+
+nicola = read.csv("nicola.csv")
+nicola = nicola[-c(0:30), ]
+
+sherry = read.csv("sherry.csv")
+sherry = sherry[-c(0:31), ]
+
+yueya = read.csv("yueya.csv")
+yueya = yueya[-c(0:30), ]
+
+
+```
+
+#Visualization
+```{r}
+
+library(ggplot2)
+jingyi_g = ggplot(data=jingyi_e, aes(x=time_tick)) + 
+  geom_line(aes(y=gyr_X_value, colour = "x")) +
+  geom_line(aes(y=gyr_Y_value, colour = "y")) +
+  geom_line(aes(y=gyr_Z_value, colour = "z")) +
+  scale_x_continuous("Time (1 min)") +
+  scale_y_continuous("Movement/Rotation") +
+  ggtitle("Jingyi (Expert)")
+
+jay_g = ggplot(data=jay, aes(x=time_tick)) + 
+  geom_line(aes(y=gyr_X_value, colour = "x")) +
+  geom_line(aes(y=gyr_Y_value, colour = "y")) +
+  geom_line(aes(y=gyr_Z_value, colour = "z")) +
+    scale_x_continuous("Time (1 min)") +
+  scale_y_continuous("Movement/Rotation") +
+  ggtitle("Jay (Novice)")
+
+liz_g = ggplot(data=liz_e, aes(x=time_tick)) + 
+ geom_line(aes(y=gyr_X_value, colour = "x")) +
+  geom_line(aes(y=gyr_Y_value, colour = "y")) +
+  geom_line(aes(y=gyr_Z_value, colour = "z")) +
+    scale_x_continuous("Time (1 min)") +
+  scale_y_continuous("Movement/Rotation") +
+  ggtitle("Liz (expert)")
+
+leona_g = ggplot(data=leona_e, aes(x=time_tick)) + 
+  geom_line(aes(y=gyr_X_value, colour = "x")) +
+  geom_line(aes(y=gyr_Y_value, colour = "y")) +
+  geom_line(aes(y=gyr_Z_value, colour = "z")) +
+    scale_x_continuous("Time (1 min)") +
+  scale_y_continuous("Movement/Rotation") +
+  ggtitle("Leona (expert)")
+
+nicola_g = ggplot(data=nicola, aes(x=time_tick)) + 
+  geom_line(aes(y=gyr_X_value, colour = "x")) +
+  geom_line(aes(y=gyr_Y_value, colour = "y")) +
+  geom_line(aes(y=gyr_Z_value, colour = "z")) +
+    scale_x_continuous("Time (1 min)") +
+  scale_y_continuous("Movement/Rotation") +
+  ggtitle("Nicola (Novice)")
+
+sherry_g = ggplot(data=sherry, aes(x=time_tick)) + 
+  geom_line(aes(y=gyr_X_value, colour = "x")) +
+  geom_line(aes(y=gyr_Y_value, colour = "y")) +
+  geom_line(aes(y=gyr_Z_value, colour = "z")) +
+    scale_x_continuous("Time (1 min)") +
+  scale_y_continuous("Movement/Rotation") +
+  ggtitle("Sherry (Novice)")
+
+yueya_g = ggplot(data=yueya, aes(x=time_tick)) + 
+  geom_line(aes(y=gyr_X_value, colour = "x")) +
+  geom_line(aes(y=gyr_Y_value, colour = "y")) +
+  geom_line(aes(y=gyr_Z_value, colour = "z")) +
+    scale_x_continuous("Time (1 min)") +
+  scale_y_continuous("Movement/Rotation") +
+  ggtitle("Yueya (Novice)")
+
+jingyi_g
+jay_g
+liz_g
+leona_g
+nicola_g
+sherry_g
+yueya_g
+
+
+
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
